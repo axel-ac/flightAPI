@@ -4,20 +4,20 @@
 ------------------------------------------------------- */
 const router = require("express").Router();
 /* ------------------------------------------------------- */
-// routes/reservation:
+// routes/user:
 
-const reservation = require("../controllers/reservation");
+const user = require("../controllers/user");
 
-// URL: /reservations
+// URL: /users
 
-router.route("/").get(reservation.list).post(reservation.create);
+router.route("/").get(user.list).post(user.create);
 
 router
   .route("/:id")
-  .get(reservation.read)
-  .put(reservation.update)
-  .patch(reservation.update)
-  .delete(reservation.delete);
+  .get(user.read)
+  .put(user.update)
+  .patch(user.update)
+  .delete(user.delete);
 
 /* ------------------------------------------------------- */
 module.exports = router;
