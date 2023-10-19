@@ -4,20 +4,22 @@
 ------------------------------------------------------- */
 const router = require("express").Router();
 /* ------------------------------------------------------- */
-// routes/user:
+// routes/:
 
-const user = require("../controllers/user");
+// URL: /
 
-// URL: /users
-
-router.route("/").get(user.list).post(user.create);
-
-router
-  .route("/:id")
-  .get(user.read)
-  .put(user.update)
-  .patch(user.update)
-  .delete(user.delete);
+// auth:
+router.use("/auth", require("./auth"));
+// user:
+router.use("/users", require("./user"));
+// flight:
+router.use("/flights", require("./flight"));
+// passenger:
+router.use("/passengers", require("./passenger"));
+// reservation:
+router.use("/reservations", require("./reservation"));
+// document:
+router.use("/documents", require("./document"));
 
 /* ------------------------------------------------------- */
 module.exports = router;
