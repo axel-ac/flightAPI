@@ -48,6 +48,12 @@ const PassengerSchema = new mongoose.Schema(
         "Email type is not correct.",
       ],
     },
+
+    createdId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
   { collection: "passengers", timestamps: true }
 );
