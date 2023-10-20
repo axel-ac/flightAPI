@@ -4,7 +4,7 @@
 ------------------------------------------------------- */
 // Flight Controller:
 
-const Flight = require("../models/user");
+const Flight = require("../models/flight");
 
 module.exports = {
   list: async (req, res) => {
