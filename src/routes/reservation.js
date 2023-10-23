@@ -20,7 +20,8 @@ router
   .get(reservation.read)
   .put(reservation.update)
   .patch(reservation.update)
-  .delete(reservation.delete);
+  .delete(permissions.isAdmin, reservation.delete);
 
+router.get("/:id/passengers", reservation.passengers);
 /* ------------------------------------------------------- */
 module.exports = router;

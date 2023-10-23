@@ -31,7 +31,7 @@ router
   .get(Flight.read)
   .put(Flight.update)
   .patch(Flight.update)
-  .delete(Flight.delete);
+  .delete(permissions.isAdmin, flight.delete);
 
 /* ------------------------------------------------------- */
 module.exports = router;
